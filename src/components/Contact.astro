@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import cta from "../assets/images/cta-evening.jpg";
+import { site } from "../data/site";
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+	<figure class="contact__photo">
+		<Image
+			src={cta}
+			alt="夕方の街路のイメージ写真"
+			class="contact__img"
+			widths={[960, 1400, 1920]}
+			sizes="100vw"
+		/>
+	</figure>
+	<div class="contact__shade" aria-hidden="true"></div>
+	<div class="shell contact__copy">
+		<p class="kicker" data-reveal>ご応募・お問い合わせ</p>
+		<h2 class="display" id="contact-title" data-reveal>まずは、声を聞かせてください。</h2>
+		<p class="contact__lead" data-reveal>
+			営業時間内にお電話ください。{site.hoursNote} {site.hours}。定休日はありません。
+		</p>
+		<a class="contact__tel" data-reveal href={`tel:${site.tel}`}>{site.telLabel}</a>
+		<p class="contact__address" data-reveal>
+			{site.address} {site.building}<br />
+			{site.station} {site.walk}
+		</p>
+	</div>
+</section>

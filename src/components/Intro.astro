@@ -1,0 +1,34 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="intro" id="about" aria-labelledby="about-title">
+	<div class="shell intro__grid">
+		<div data-reveal>
+			<p class="kicker">私たちについて</p>
+			<h2 class="display" id="about-title">声を扱い、届く形にする。</h2>
+		</div>
+		<div class="intro__text" data-reveal>
+			<p>
+				株式会社ATOMは、人の声を起点に仕事をつくっています。コールセンター、セールスプロモーション、テレマーケティングで培った対話に、動画編集とSNS運用を重ね、伝えたいことを届く形にします。
+			</p>
+			<p>
+				拠点は{site.station}から{site.walk}、{site.building}。{site.hoursNote}とも {site.hours} まで開いています。定休日はありません。
+			</p>
+		</div>
+	</div>
+	<dl class="facts shell" data-reveal>
+		<div>
+			<dt>掲載中の求人</dt>
+			<dd>33</dd>
+		</div>
+		<div>
+			<dt>応募のステップ</dt>
+			<dd>3</dd>
+		</div>
+		<div>
+			<dt>{site.station}から</dt>
+			<dd>5分</dd>
+		</div>
+	</dl>
+</section>

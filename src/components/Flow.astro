@@ -1,0 +1,37 @@
+---
+const steps = [
+	{
+		index: "01",
+		title: "電話面接",
+		text: "まずはお電話で、ご経験やご希望を伺います。",
+	},
+	{
+		index: "02",
+		title: "会社見学＆最終面接",
+		text: "オフィスをご覧いただき、最終面接を行います。",
+	},
+	{
+		index: "03",
+		title: "合否のご連絡",
+		text: "選考の結果を、ご連絡します。",
+	},
+];
+---
+
+<section class="flow" id="flow" aria-labelledby="flow-title">
+	<header class="shell band-head" data-reveal>
+		<p class="kicker">応募の流れ</p>
+		<h2 class="display" id="flow-title">三つのステップ。</h2>
+	</header>
+	<ol class="shell flow__list">
+		{
+			steps.map((step) => (
+				<li data-reveal>
+					<p class="flow__index">{step.index}</p>
+					<h3>{step.title}</h3>
+					<p>{step.text}</p>
+				</li>
+			))
+		}
+	</ol>
+</section>

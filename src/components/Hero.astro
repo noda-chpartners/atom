@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import hero from "../assets/images/hero-studio.jpg";
+import { site } from "../data/site";
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+	<figure class="hero__photo">
+		<Image
+			src={hero}
+			alt="夕暮れの部屋で映像を編集する人のイメージ写真"
+			class="hero__img"
+			widths={[960, 1400, 1920]}
+			sizes="100vw"
+			loading="eager"
+			fetchpriority="high"
+		/>
+	</figure>
+	<div class="hero__shade" aria-hidden="true"></div>
+	<div class="shell hero__copy">
+		<p class="kicker" data-hero-item>株式会社ATOM</p>
+		<h1 class="hero__title" id="hero-title" data-hero-item>
+			あなたの声が、<br />未来を変える。
+		</h1>
+		<p class="hero__lead" data-hero-item>
+			動画編集、SNS運用、営業・マーケティング。池袋から、伝えたいことを届ける仕事をしています。
+		</p>
+		<div class="hero__actions" data-hero-item>
+			<a class="btn" href="#jobs">募集中のお仕事を見る</a>
+			<a class="textlink" href={`tel:${site.tel}`}>{site.telLabel}</a>
+		</div>
+		<p class="hero__meta" data-hero-item>
+			{site.station} {site.walk}
+			<span aria-hidden="true">／</span>
+			{site.hoursNote} {site.hours}
+			<span aria-hidden="true">／</span>
+			定休日 {site.closed}
+		</p>
+	</div>
+</section>

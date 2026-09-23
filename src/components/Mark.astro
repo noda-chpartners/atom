@@ -1,0 +1,14 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg class:list={["mark", className]} viewBox="0 0 64 64" aria-hidden="true">
+	<path
+		fill="currentColor"
+		fill-rule="evenodd"
+		d="M32 10 54 54h-8.2L41.2 43.2H22.8L18.2 54H10L32 10Zm0 16.8-5.6 13.2h11.2L32 26.8Z"></path>
+</svg>

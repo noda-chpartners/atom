@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import video from "../assets/images/service-video.jpg";
+import sns from "../assets/images/service-sns.jpg";
+import sales from "../assets/images/service-sales.jpg";
+
+const services = [
+	{
+		index: "01",
+		title: "動画編集",
+		text: "素材の選定、カット、テロップ、音。伝わる順番に整えることが、編集の仕事です。説明の動画も、短い配信の動画も、最後まで見てもらえる構成を組みます。",
+		image: video,
+		alt: "映像編集のタイムラインを操作する手元のイメージ写真",
+	},
+	{
+		index: "02",
+		title: "SNS運用",
+		text: "世界観、投稿の頻度、言葉の温度。一回で終わらせず、反応を見ながら次の投稿へつなぎます。続けるための設計を、投稿の言葉と一緒に整えます。",
+		image: sns,
+		alt: "スマートフォンと色見本を並べた撮影デスクのイメージ写真",
+	},
+	{
+		index: "03",
+		title: "営業・マーケティング",
+		text: "電話で声を聞き、必要な情報を渡し、次の会話につなぐ。テレマーケティングとセールスプロモーションを中心に、商品と人の距離を縮めます。",
+		image: sales,
+		alt: "窓辺のテーブルで話し合う二人のイメージ写真",
+	},
+];
+---
+
+<section class="services" id="services" aria-labelledby="services-title">
+	<header class="shell band-head" data-reveal>
+		<p class="kicker">事業内容</p>
+		<h2 class="display" id="services-title">三つの仕事で、声を届ける。</h2>
+	</header>
+	<div class="chapters">
+		{
+			services.map((service) => (
+				<article class="chapter">
+					<div class="chapter__media">
+						<Image
+							src={service.image}
+							alt={service.alt}
+							class="chapter__img"
+							widths={[800, 1200, 1800]}
+							sizes="100vw"
+						/>
+					</div>
+					<div class="chapter__card" data-reveal>
+						<p class="chapter__index">{service.index}</p>
+						<h3>{service.title}</h3>
+						<p>{service.text}</p>
+					</div>
+				</article>
+			))
+		}
+	</div>
+</section>

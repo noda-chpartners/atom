@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import design from "../assets/images/job-design.jpg";
+import illustration from "../assets/images/job-illustration.jpg";
+import writing from "../assets/images/job-writing.jpg";
+import { site } from "../data/site";
+
+const roles = [
+	{
+		line1: "Webデザイン",
+		line2: "Webデザイナー",
+		text: "サイトデザイン、UI作成、グラフィック制作などをお任せします。",
+		image: design,
+		alt: "印刷したレイアウトを並べる手元のイメージ写真",
+	},
+	{
+		line1: "デザイン",
+		line2: "デザイナー・イラストレーター",
+		text: "要望に応じたデザインやイラスト作成などをお任せします。",
+		image: illustration,
+		alt: "筆と墨で描かれた植物のイメージ写真",
+	},
+	{
+		line1: "編集・校正",
+		line2: "ライター・コピーライター",
+		text: "ポジションにより、文書の編集、校正作業、記事作成などをお任せします。",
+		image: writing,
+		alt: "窓辺の机にノートとペンを置いたイメージ写真",
+	},
+];
+
+const openings = [
+	{
+		place: "横浜市神奈川区",
+		access: "横浜駅 徒歩8分",
+	},
+	{
+		place: "大阪市中央区",
+		access: "心斎橋駅 徒歩7分",
+	},
+	{
+		place: "練馬区",
+		access: "練馬駅 徒歩2分",
+	},
+];
+---
+
+<section class="jobs" id="jobs" aria-labelledby="jobs-title">
+	<header class="shell band-head" data-reveal>
+		<p class="kicker">お仕事紹介</p>
+		<h2 class="display" id="jobs-title">募集中の仕事。</h2>
+		<p class="band-head__note">
+			デザイン、イラスト、文章、動画。未経験の方も対象です。掲載中の求人は全33件。詳細とご応募は採用ページで受け付けています。
+		</p>
+	</header>
+
+	<div class="shell sheet">
+		{
+			roles.map((role) => (
+				<article class="role" data-reveal>
+					<div class="role__media">
+						<Image
+							src={role.image}
+							alt={role.alt}
+							class="role__img"
+							widths={[480, 720, 960]}
+							sizes="(min-width: 900px) 34vw, 100vw"
+						/>
+					</div>
+					<h3>
+						{role.line1}
+						<span>{role.line2}</span>
+					</h3>
+					<p>{role.text}</p>
+				</article>
+			))
+		}
+	</div>
+
+	<div class="shell openings">
+		<div class="openings__head" data-reveal>
+			<h3>動画編集アシスタント</h3>
+			<p>リモート可。未経験者歓迎。時給 1,700円〜2,300円。</p>
+		</div>
+		<ul class="openings__list">
+			{
+				openings.map((opening) => (
+					<li data-reveal>
+						<a href={site.recruitUrl} target="_blank" rel="noopener noreferrer">
+							<span class="openings__title">動画編集アシスタント</span>
+							<span>{opening.place}</span>
+							<span>{opening.access}</span>
+							<span class="openings__more">詳細を見る</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+		<p class="openings__shifts" data-reveal>
+			勤務シフト: 10:00〜19:00 / 11:00〜20:00 / 12:00〜21:00
+		</p>
+		<p class="openings__roles" data-reveal>
+			関連する募集職種: Webデザイン、デザイン・イラスト、編集・ライター
+		</p>
+		<a class="btn openings__cta" data-reveal href={site.recruitUrl} target="_blank" rel="noopener noreferrer">
+			全33件の募集を見る
+		</a>
+	</div>
+</section>

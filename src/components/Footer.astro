@@ -1,0 +1,30 @@
+---
+import Mark from "./Mark.astro";
+import { site } from "../data/site";
+---
+
+<footer class="footer">
+	<section class="privacy" id="privacy" aria-labelledby="privacy-title">
+		<div class="wrap privacy__grid">
+			<h2 id="privacy-title">個人情報の取り扱いについて</h2>
+			<p>
+				お問い合わせやご応募の際にお預かりした個人情報は、採用選考およびお問い合わせへの回答にのみ使用します。法令に基づく場合を除き、ご本人の同意なく第三者へ提供しません。
+			</p>
+		</div>
+	</section>
+	<div class="wrap footer__bar">
+		<a class="footer__logo" href="#top">
+			<Mark />
+			<span>{site.name}</span>
+		</a>
+		<nav aria-label="フッター">
+			<a href="#services">事業内容</a>
+			<a href="#jobs">お仕事紹介</a>
+			<a href="#flow">応募の流れ</a>
+			<a href="#company">会社概要</a>
+			<a href="#privacy">個人情報</a>
+			<a href={site.recruitUrl} target="_blank" rel="noopener noreferrer">採用ページ</a>
+		</nav>
+		<p class="footer__copy">copyright &copy; {site.name} all rights reserved.</p>
+	</div>
+</footer>

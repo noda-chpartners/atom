@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import office from "../assets/images/office-ikebukuro.jpg";
+import { mapUrl, site } from "../data/site";
+---
+
+<section class="company" id="company" aria-labelledby="company-title">
+	<figure class="company__photo" data-reveal>
+		<Image
+			src={office}
+			alt="夕方の街が見えるオフィスのイメージ写真"
+			class="company__img"
+			widths={[800, 1200, 1800]}
+			sizes="100vw"
+		/>
+		<figcaption>池袋 / イメージ</figcaption>
+	</figure>
+	<div class="shell company__main" data-reveal>
+		<p class="kicker">会社概要</p>
+		<h2 class="display" id="company-title">{site.name}</h2>
+		<dl class="spec">
+			<div>
+				<dt>法人名</dt>
+				<dd>{site.name}</dd>
+			</div>
+			<div>
+				<dt>所在地</dt>
+				<dd>
+					{site.address} {site.building}
+					<a href={mapUrl} target="_blank" rel="noopener noreferrer">地図で見る</a>
+				</dd>
+			</div>
+			<div>
+				<dt>最寄駅</dt>
+				<dd>{site.station} {site.walk}</dd>
+			</div>
+			<div>
+				<dt>電話番号</dt>
+				<dd><a href={`tel:${site.tel}`}>{site.telLabel}</a></dd>
+			</div>
+			<div>
+				<dt>営業時間</dt>
+				<dd>{site.hoursNote} {site.hours}</dd>
+			</div>
+			<div>
+				<dt>定休日</dt>
+				<dd>{site.closed}</dd>
+			</div>
+			<div>
+				<dt>株式公開</dt>
+				<dd>{site.listing}</dd>
+			</div>
+			<div>
+				<dt>事業内容</dt>
+				<dd>動画編集、SNS運用、営業・マーケティング、コールセンター、セールスプロモーション、テレマーケティング</dd>
+			</div>
+		</dl>
+	</div>
+</section>
