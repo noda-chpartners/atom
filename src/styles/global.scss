@@ -88,6 +88,7 @@ a {
 }
 
 .kicker {
+	display: block;
 	margin: 0 0 0.75rem;
 	font-size: 0.74rem;
 	font-weight: 500;
@@ -336,7 +337,14 @@ a {
 	padding-bottom: 2.4rem;
 }
 
+.hero h1 {
+	margin: 0;
+	font: inherit;
+	font-weight: inherit;
+}
+
 .hero__title {
+	display: block;
 	margin: 0;
 	max-width: 10em;
 	font-size: clamp(2.8rem, 6.4vw, 5.4rem);
