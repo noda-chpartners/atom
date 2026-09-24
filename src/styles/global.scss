@@ -1,10 +1,13 @@
-$ink: #241c17;
-$ivory: #f6f1ea;
-$cream: #f7f2eb;
-$muted: #6e645c;
-$sand: #e4c4a4;
-$line: rgba(36, 28, 23, 0.12);
-$display: "Zen Old Mincho", "Yu Mincho", serif;
+$ink: #373d46;
+$ivory: #ffffff;
+$page: #f4f7fb;
+$cream: #ffffff;
+$muted: #5c6168;
+$sand: #d7e6f5;
+$accent: #4778a5;
+$accent-deep: #3a658f;
+$line: rgba(55, 61, 70, 0.12);
+$display: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
 $sans: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
 
 *,
@@ -15,7 +18,7 @@ $sans: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
 
 body {
 	margin: 0;
-	background: $ivory;
+	background: $page;
 	color: $ink;
 	font-family: $sans;
 	font-size: 16px;
@@ -40,12 +43,12 @@ a {
 }
 
 :focus-visible {
-	outline: 2px solid $sand;
+	outline: 2px solid $accent;
 	outline-offset: 3px;
 }
 
 ::selection {
-	background: #e7d3bc;
+	background: #d5e4f3;
 	color: $ink;
 }
 
@@ -104,7 +107,7 @@ a {
 .role h3,
 .openings__head h3 {
 	font-family: $display;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .display {
@@ -120,16 +123,17 @@ a {
 	justify-content: center;
 	min-height: 2.9rem;
 	padding: 0.65rem 1.2rem;
-	background: $ink;
+	background: $accent;
 	color: $cream;
+	border-radius: 999px;
 	font-size: 0.88rem;
 	font-weight: 500;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.06em;
 	text-decoration: none;
 }
 
 .btn:hover {
-	background: #3d312a;
+	background: $accent-deep;
 }
 
 .textlink {
@@ -151,11 +155,13 @@ a {
 	padding: 0 1.4rem;
 	background: $ivory;
 	color: $ink;
+	box-shadow: 0 1px 0 rgba(55, 61, 70, 0.08);
 }
 
 .header.is-overlay:not(.is-menu) {
 	background: transparent;
 	color: $cream;
+	box-shadow: none;
 }
 
 .header.is-menu {
@@ -221,11 +227,12 @@ a {
 	position: relative;
 	z-index: 45;
 	display: none;
-	width: 2.4rem;
-	height: 2.4rem;
+	width: 2.6rem;
+	height: 2.6rem;
 	border: 0;
-	background: transparent;
-	color: inherit;
+	border-radius: 0.7rem;
+	background: $accent;
+	color: $cream;
 	cursor: pointer;
 }
 
@@ -316,7 +323,7 @@ a {
 .hero__shade,
 .contact__shade {
 	background:
-		linear-gradient(180deg, rgba(16, 10, 8, 0.42) 0%, rgba(16, 10, 8, 0) 24%, rgba(16, 10, 8, 0.05) 42%, rgba(16, 10, 8, 0.82) 100%);
+		linear-gradient(180deg, rgba(36, 62, 96, 0.34) 0%, rgba(36, 62, 96, 0) 26%, rgba(28, 48, 74, 0.08) 44%, rgba(24, 44, 70, 0.72) 100%);
 	pointer-events: none;
 }
 
@@ -325,7 +332,7 @@ a {
 	top: 5.2rem;
 	right: 1.3rem;
 	margin: 0;
-	color: rgba(247, 242, 235, 0.78);
+	color: rgba(255, 255, 255, 0.82);
 	font-size: 0.68rem;
 	letter-spacing: 0.2em;
 }
@@ -348,8 +355,9 @@ a {
 	margin: 0;
 	max-width: 10em;
 	font-size: clamp(2.8rem, 6.4vw, 5.4rem);
-	line-height: 1.22;
-	letter-spacing: 0.04em;
+	font-weight: 500;
+	line-height: 1.28;
+	letter-spacing: 0.02em;
 }
 
 .hero .kicker,
@@ -362,7 +370,7 @@ a {
 .contact__address {
 	max-width: 34rem;
 	margin: 1rem 0 0;
-	color: rgba(247, 242, 235, 0.84);
+	color: rgba(255, 255, 255, 0.9);
 }
 
 .hero__actions {
@@ -374,12 +382,12 @@ a {
 }
 
 .hero .btn {
-	background: $cream;
-	color: $ink;
+	background: $accent;
+	color: $cream;
 }
 
 .hero .btn:hover {
-	background: #fff;
+	background: $accent-deep;
 }
 
 .hero .textlink,
@@ -392,7 +400,7 @@ a {
 	flex-wrap: wrap;
 	gap: 0.35rem 0.7rem;
 	margin: 1.6rem 0 0;
-	color: rgba(247, 242, 235, 0.72);
+	color: rgba(255, 255, 255, 0.82);
 	font-size: 0.86rem;
 	letter-spacing: 0.04em;
 
@@ -419,7 +427,7 @@ a {
 .intro .kicker,
 .band-head .kicker,
 .company .kicker {
-	color: #9a623c;
+	color: $accent;
 }
 
 .intro__text p {
@@ -478,13 +486,15 @@ a {
 	width: min(28rem, calc(100% - 2.4rem));
 	margin: -5.2rem 0 0 max(1.2rem, calc((100% - 1080px) / 2));
 	padding: 1.7rem 1.7rem 1.5rem;
+	border-radius: 1.15rem;
 	background: $ivory;
+	box-shadow: 0 18px 40px rgba(55, 80, 110, 0.12);
 }
 
 .chapter__index,
 .flow__index {
 	margin: 0;
-	color: #9a623c;
+	color: $accent;
 	font-family: $display;
 	letter-spacing: 0.14em;
 }
@@ -511,6 +521,7 @@ a {
 
 .role__media {
 	overflow: hidden;
+	border-radius: 0.9rem;
 }
 
 .role__img {
@@ -575,7 +586,7 @@ a {
 	}
 
 	a:hover {
-		color: #9a623c;
+		color: $accent;
 	}
 }
 
@@ -614,7 +625,7 @@ a {
 	margin: 0.35rem 0 0.4rem;
 	font-family: $display;
 	font-size: 1.35rem;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.05em;
 }
 
@@ -633,7 +644,7 @@ a {
 	bottom: 0.9rem;
 	margin: 0;
 	padding: 0.12rem 0.5rem;
-	background: rgba(246, 241, 234, 0.9);
+	background: rgba(255, 255, 255, 0.92);
 	color: $muted;
 	font-size: 0.68rem;
 	letter-spacing: 0.18em;
@@ -700,7 +711,7 @@ a {
 		margin: 0 0 0.4rem;
 		font-family: $display;
 		font-size: 1.05rem;
-		font-weight: 400;
+		font-weight: 500;
 		letter-spacing: 0.08em;
 	}
 
@@ -819,7 +830,7 @@ a {
 		align-items: center;
 		gap: 0.4rem;
 		margin-top: 0.45rem;
-		color: #9a623c;
+		color: $accent;
 		font-family: $sans;
 		font-size: 1rem;
 		font-weight: 500;

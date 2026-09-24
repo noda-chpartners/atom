@@ -121,6 +121,7 @@ export function initSite(): void {
 		header.classList.toggle("is-overlay", bottom > 72);
 	};
 	syncOverlay();
+	window.addEventListener("scroll", syncOverlay, { passive: true });
 	ScrollTrigger.create({
 		trigger: hero,
 		start: "top top",
